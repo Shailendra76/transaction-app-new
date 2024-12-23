@@ -51,6 +51,7 @@ const transactionSchema = new mongoose.Schema({
     money: Number,
     transactionType: String,
     context: String,
+    status: { type: String, enum: ["pending", "completed"], default: "pending" },
     date: { type: Date, default: Date.now }
 });
 
