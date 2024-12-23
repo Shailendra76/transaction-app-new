@@ -57,6 +57,16 @@ const transactionSchema = new mongoose.Schema({
 const Transaction = mongoose.model("Transaction", transactionSchema);
 
 // Routes
+app.patch('/transaction/:id', async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+  try {
+    const updatedTransaction = await Transaction.findByIdAndUpdate(id, { status }, { new: true });
+    res.json(updatedTransaction);
+  } catch (err) {
+    res.status(500).json({ message: "Error updating status" });
+  }
+});
 app.post("/signup", async (req, res) => {
     const { email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
