@@ -1,0 +1,27 @@
+
+.homepage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.homepage-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icon-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #6200ea;
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
